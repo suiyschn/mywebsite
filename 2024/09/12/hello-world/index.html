@@ -5,6 +5,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+
+
+
 
   <!-- Title -->
   
@@ -49,9 +55,13 @@
       <!-- Header -->
       <nav class="navbar navbar-toggleable-sm navbar-light px-1 py-3 my-3 mb-sm-5">
   <a class="navbar-brand ml-2" href="/">Yousheng's Galary</a>
-  <button class="navbar-toggler navbar-toggler-right py-2" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+
+  <button class="navbar-toggler navbar-toggler-right py-2" type="button" data-toggle="collapse"
+    data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+    aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <div class="collapse navbar-collapse text-center" id="navbarCollapse">
     <ul class="navbar-nav ml-auto my-auto">
       
@@ -71,6 +81,12 @@
           <a class="nav-link" href="/articles/">Articles</a>
         </li>
       
+      <!-- 回到主页图标（右侧） -->
+      <li class="nav-item">
+        <a class="nav-link home-icon" href="/" title="首页">
+          <i class="fa-solid fa-house"></i>
+        </a>
+      </li>
     </ul>
     <hr class="hidden-md-up" />
   </div>
@@ -110,6 +126,45 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<a id="back-to-top" class="back-to-top" href="#" title="Back to top">
+  <i class="fa-solid fa-chevron-up"></i>
+</a>
+<a id="back-to-top" class="back-to-top" href="#" title="回到顶部">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+
+
+<script>
+  // 显示/隐藏按钮
+  window.addEventListener('scroll', function () {
+    const btn = document.getElementById('back-to-top');
+    if (document.documentElement.scrollTop > 200) {
+      btn.style.display = 'block';
+    } else {
+      btn.style.display = 'none';
+    }
+  });
+
+  // 平滑滚动回到顶部
+  document.getElementById('back-to-top').addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+<script>
+  window.addEventListener('scroll', function () {
+    const btn = document.getElementById('back-to-top');
+    btn.style.display = window.scrollY > 200 ? 'flex' : 'none';
+  });
+
+  document.getElementById('back-to-top').addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
 
   </body>
 </html>
